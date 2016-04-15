@@ -14,7 +14,7 @@ FactoryGirl.define do
   end
 
   sequence :image_path do |n|
-    Faker::Avatar.image("25x25")
+    Faker::Avatar.image("25x2#{n}")
   end
 
 end

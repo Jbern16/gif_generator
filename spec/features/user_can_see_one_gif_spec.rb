@@ -17,9 +17,12 @@ RSpec.feature "User can see one gif" do
 
     gif_one = create(:gif)
 
-
     visit gif_path(gif_one)
-    
+
     expect(page).to have_link gif_one.category.name, href: category_path(gif_one.category)
+
+    click_link gif_one.category.name
+
+    expect(current_path). to eq category_path(gif_one.category)
   end
 end
