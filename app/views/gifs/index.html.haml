@@ -2,4 +2,4 @@
 
 .row
   - @gifs.each do |gif|
-    .small-4.column= link_to(image_tag(gif.image_path, alt: gif.image_path), gif_path(gif))
+    .small-4.column.float-left.thumbnail= link_to(image_tag(gif.image_path, alt: gif.image_path), gif_path(gif))
