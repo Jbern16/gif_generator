@@ -1,0 +1,8 @@
+
+%h1 All The Categories
+
+.row
+- @categories.each do |category|
+  .small-4.float-right.columns.thumbnail= link_to(image_tag(category.gifs.sample.image_path), category_path(category))
+  .float-right= link_to(category.name, category_path(category))
+  
