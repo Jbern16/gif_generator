@@ -1,0 +1,11 @@
+<div class="top-bar">
+  <div class="top-bar-title"><%= link_to "Gif Explosion", gifs_path, {style: "color: purple"} %></div>
+  <div>
+    <div class="top-bar-left"></div>
+    <div class="top-bar-right">
+      <%= link_to "Log Out", logout_path, method: :delete if user_logged_in? %>
+      <%= link_to "Create Account", new_user_path unless user_logged_in? %>
+      <%= link_to "Log In", login_path unless user_logged_in? %>
+    </div>
+  </div>
+</div>
