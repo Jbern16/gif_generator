@@ -7,11 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="row">
-
+    <div><%= render partial: "/partials/nav" %></div>
+    <div><%= render partial: "/partials/flash_notice" %></div>
     <%= yield %>
-
-  </div>
 </body>
 <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
 </html>
