@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415234716) do
+ActiveRecord::Schema.define(version: 20160417181823) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "gif_id"
+  end
+
+  add_index "favorites", ["gif_id"], name: "index_favorites_on_gif_id"
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
 
   create_table "gifs", force: :cascade do |t|
     t.string   "image_path"

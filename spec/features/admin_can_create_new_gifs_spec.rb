@@ -21,6 +21,8 @@ RSpec.feature "Admin can create gifs" do
 
       admin = User.create(username: "jbern", password: "password", role: 1)
 
+      ApplicationController.any_instance.stubs(:current_user).returns(admin)
+
       visit user_path(admin)
       click_on "Create Gif"
 

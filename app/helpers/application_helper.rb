@@ -2,7 +2,7 @@ module ApplicationHelper
 
     def all_gifs(category)
       if category.split.count > 1
-        category = category.split_category
+        category = category.split.join("+")
       end
       response = Faraday.get("http://api.giphy.com/v1/gifs/search?q=#{category}&api_key=dc6zaTOxFJmzC")
       data = JSON.parse(response.body)

@@ -1,3 +1,8 @@
 .row.small-6.small-centered.columns
   %h1= "Welcome " + @user.username
   %b= link_to "Create Gif", new_admin_gif_path if @user.admin?
+  %h4 Your Gifs
+.row.small-up-1.medium-up-2.large-up-3
+  - @user.gifs.each do |gif|
+    .column.thumbnail= image_tag(gif.image_path, alt: gif.image_path)
+    %b.alert-button= button_to "Unfavorite", gif_favorite_path(gif.id, favorite_id(@user.id, gif.id)), method: :delete

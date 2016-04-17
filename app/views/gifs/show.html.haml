@@ -1,5 +1,6 @@
 
 .row
   .small-6.small-centered.columns= image_tag @gif.image_path
+  %b.success-button= button_to "Favorite", gif_favorites_path(@gif.id)
 .row
   %h5.small-3.small-centered.columns= link_to @gif.category.name, @gif.category
