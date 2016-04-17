@@ -4,6 +4,4 @@ class User < ActiveRecord::Base
   validates :password, presence: true
   enum role: %w(default admin)
   scope :admin?, -> { where(role: 1) }
-
-
 end
