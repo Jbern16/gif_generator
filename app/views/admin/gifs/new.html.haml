@@ -1,0 +1,7 @@
+%h1.text-center Add New Gifs!
+
+.row.small-6.small-centered.columns
+  =form_tag("/admin/gifs", method: "post") do
+    = label_tag :category_name, "Category Name"
+    = text_field_tag :category_name
+    = submit_tag "Create Gifs!"
