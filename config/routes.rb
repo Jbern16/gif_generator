@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :gifs, only: [ :index, :show ]
+  resources :gifs, only: [ :index, :show ] do
+    resources :favorites, only: [:new, :create, :destroy]
+  end
+
 
   resources :categories, param: :name,  only: [ :show, :index ]
 

@@ -22,4 +22,5 @@ class Admin::GifsController < ApplicationController
       redirect_to "../../public/404"
     end
   end
+
 end
